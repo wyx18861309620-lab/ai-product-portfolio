@@ -2,6 +2,8 @@
 
 关注 AI 产品从需求定义、交互体验到评测与交付的完整过程。本仓库整理三个项目的产品思路、工作内容与可访问作品。
 
+[浏览网页作品集](https://wyx18861309620-lab.github.io/ai-product-portfolio/) · [查看两页项目补充](assets/project-supplement.pdf)
+
 | 项目 | 方向与职责 | 项目说明 | 在线体验 |
 | --- | --- | --- | --- |
 | **店小谋** | 本地生活商家经营 Agent · AI 产品经理 | [产品、交互与 Agent 工作流](projects/dianxiaomou/README.md) | [在线产品](https://dianxiaomou.com) |
