@@ -29,12 +29,4 @@ el('pageSelect').addEventListener('change',e=>{page=Number(e.target.value);rende
 el('closeDialog').addEventListener('click',()=>el('slideDialog').close());
 el('slideDialog').addEventListener('click',e=>{if(e.target===el('slideDialog'))el('slideDialog').close();});
 document.addEventListener('keydown',e=>{const inViewer=el('slideDialog').open||el('viewer').contains(document.activeElement)||el('thumbnails').contains(document.activeElement);if(inViewer&&!['SELECT','INPUT','TEXTAREA'].includes(document.activeElement.tagName)){if(e.key==='ArrowRight'){e.preventDefault();move(1);}if(e.key==='ArrowLeft'){e.preventDefault();move(-1);}}});
-el('loadGame').addEventListener('click',()=>{
- const iframe=document.createElement('iframe');iframe.title='Sushi Cat Sort 在线试玩';
- iframe.src='https://html-classic.itch.zone/html/18536236/index.html?v=1785082877';iframe.allow='autoplay; fullscreen; gamepad';iframe.allowFullscreen=true;
- let loaded=false;iframe.addEventListener('load',()=>{loaded=true;el('gameStatus').textContent='游戏框架已载入';});
- el('gameMount').replaceChildren(iframe);el('gameStatus').textContent='正在载入游戏…';el('fullscreenGame').disabled=false;
- setTimeout(()=>{if(!loaded){el('gameStatus').textContent='暂未载入，请在新窗口试玩';const fallback=document.createElement('a');fallback.href='https://archieneverwake.itch.io/sushi-cat-sort';fallback.target='_blank';fallback.rel='noopener noreferrer';fallback.className='game-fallback button primary';fallback.textContent='新窗口试玩 ↗';el('gameMount').append(fallback);}},18000);
-});
-el('fullscreenGame').addEventListener('click',()=>{const shell=document.querySelector('.game-shell');if(shell.requestFullscreen)shell.requestFullscreen().catch(()=>{el('gameStatus').textContent='可使用 itch.io 新窗口试玩';});});
 switchDeck('proposal');
